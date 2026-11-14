@@ -1,6 +1,6 @@
 # CLAUDE.md: Standards for All Projects
 
-Version: 1.1.1
+Version: 1.2.0
 
 This file applies to every project. Project-specific notes go in that project's own README.md. Projects do not get their own CLAUDE.md. If the README and this file ever disagree, ask Griff.
 
