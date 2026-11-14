@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
+- `NEW-PROJECT.md`: a starter message to paste into Claude Code for every new project. It expects a design PDF attached, summarizes the design for confirmation before building, and asks its starting questions in one round.
+
 ## [1.2.1] - 2026-11-14
 
 ### Fixed
