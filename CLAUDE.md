@@ -144,14 +144,19 @@ Applies to desktop apps and web apps.
 
 Do these in order. Do not skip ahead.
 
-1. Prompt Griff to create a new private GitHub repo, and wait until he has done it. Repos are private by default.
-2. Ask Griff to import the design first: the artifacts or the design PDF showing how it should look. Save them in a `design/` folder in the repo. Do not build anything visual until Griff has provided the design or said there is none.
-3. Use the MIT License for every project. Do not ask. The LICENSE file reads `Copyright (c) <current year> Carcosa Astral`.
-4. Set the git identity (see Git and versioning).
-5. Create README.md (see README below), CHANGELOG.md (with an Unreleased section), LICENSE, and `.gitignore`.
-6. Web projects: also create `.env` and `.env.example`, with `.env` listed in `.gitignore`, before the first commit.
-7. Start at version 0.1.0 unless Griff says otherwise.
-8. Make the first commit on `main` and push it.
+1. Refresh these standards from the `carcosa-astral/ca-philosophy` repo.
+   - Clone it to `%USERPROFILE%\.claude\ca-philosophy` the first time. After that, run `git pull` there.
+   - Copy its `CLAUDE.md` to `%USERPROFILE%\.claude\CLAUDE.md`. Copying from the repo is not editing this file.
+   - If the `Version:` line changed, tell Griff the old and new version in one sentence, then read the new file and follow it.
+   - If the repo cannot be reached, stop and ask Griff what to do.
+2. Prompt Griff to create a new private GitHub repo, and wait until he has done it. Repos are private by default.
+3. Ask Griff to import the design first: the artifacts or the design PDF showing how it should look. Save them in a `design/` folder in the repo. Do not build anything visual until Griff has provided the design or said there is none.
+4. Use the MIT License for every project. Do not ask. The LICENSE file reads `Copyright (c) <current year> Carcosa Astral`.
+5. Set the git identity (see Git and versioning).
+6. Create README.md (see README below), CHANGELOG.md (with an Unreleased section), LICENSE, and `.gitignore`.
+7. Web projects: also create `.env` and `.env.example`, with `.env` listed in `.gitignore`, before the first commit.
+8. Start at version 0.1.0 unless Griff says otherwise.
+9. Make the first commit on `main` and push it.
 
 ## Git and versioning
 

@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
+- New project checklist step 1: refresh `CLAUDE.md` from this repo before starting. Claude Code clones or pulls the repo, copies the file to the `.claude` folder, reports any version change, and stops to ask if the repo cannot be reached.
+
 ## [1.1.1] - 2026-11-14
 
 ### Added
