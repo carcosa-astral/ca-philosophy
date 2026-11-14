@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.1.0] - 2026-11-14
+
 ### Changed
 
 - Every project now uses the MIT License. Claude Code no longer asks which license to use.
@@ -18,5 +20,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - `CLAUDE.md` with the global coding standards: philosophy, desktop applications (Rust), web apps (Cloudflare), design and look, Windows scripting, new project checklist, and git and versioning.
 - `README.md` with full documentation.
 
-[Unreleased]: https://github.com/carcosa-astral/ca-philosophy/compare/v1.0.0...HEAD
+[Unreleased]: https://github.com/carcosa-astral/ca-philosophy/compare/v1.1.0...HEAD
+[1.1.0]: https://github.com/carcosa-astral/ca-philosophy/compare/v1.0.0...v1.1.0
 [1.0.0]: https://github.com/carcosa-astral/ca-philosophy/releases/tag/v1.0.0
