@@ -7,6 +7,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
+- `NEW-PROJECT.md` now accepts an optional spec document. If one is attached, it overrides the day one features list and Claude Code skips feature questions.
+
+### Changed
+
+- `NEW-PROJECT.md` now includes the raw URL for `CLAUDE.md` in the message itself, so Claude Code knows exactly where to download the standards.
+
 ## [1.3.0] - 2026-11-14
 
 ### Added

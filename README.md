@@ -36,7 +36,7 @@ To bring an older project up to date, copy the newest `CLAUDE.md` from this repo
 The repo is intentionally tiny:
 
 - `CLAUDE.md`: the standards themselves.
-- `NEW-PROJECT.md`: the starter message to paste into Claude Code when beginning a project, with a design PDF attached.
+- `NEW-PROJECT.md`: the starter message to paste into Claude Code when beginning a project, with a design PDF and an optional spec document attached.
 - `README.md`: this file.
 - `CHANGELOG.md`: version history.
 - `LICENSE`: MIT.
