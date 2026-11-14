@@ -144,7 +144,7 @@ Do these in order. Do not skip ahead.
 
 1. Prompt Griff to create a new private GitHub repo, and wait until he has done it. Repos are private by default.
 2. Ask Griff to import the design first: the artifacts or the design PDF showing how it should look. Save them in a `design/` folder in the repo. Do not build anything visual until Griff has provided the design or said there is none.
-3. Ask Griff which license to use. Never pick one by default, even if earlier projects used a certain one.
+3. Use the MIT License for every project. Do not ask. The LICENSE file reads `Copyright (c) <current year> Carcosa Astral`.
 4. Set the git identity (see Git and versioning).
 5. Create README.md (see README below), CHANGELOG.md (with an Unreleased section), LICENSE, and `.gitignore`.
 6. Web projects: also create `.env` and `.env.example`, with `.env` listed in `.gitignore`, before the first commit.

@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Changed
+
+- Every project now uses the MIT License. Claude Code no longer asks which license to use.
+
 ## [1.0.0] - 2026-11-14
 
 ### Added
