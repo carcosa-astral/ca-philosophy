@@ -41,7 +41,7 @@ The repo is intentionally tiny:
 - `CHANGELOG.md`: version history.
 - `LICENSE`: MIT.
 
-Changes are releases. Each meaningful change to the rules gets a version bump and a changelog entry.
+Each meaningful change to the rules gets a version bump and a changelog entry. The current version is stored in the header of `CLAUDE.md`. This repo does not use git tags or GitHub releases.
 
 ## Approved dependencies
 
