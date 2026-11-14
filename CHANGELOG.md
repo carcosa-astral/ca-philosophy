@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.2.1] - 2026-11-14
+
 ### Fixed
 
 - New project checklist step 1 now downloads `CLAUDE.md` directly from the raw URL on the `main` branch of this repo and saves it unchanged in the new project. No clone, and nothing in the user profile folder.
