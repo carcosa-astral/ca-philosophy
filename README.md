@@ -21,16 +21,15 @@ A plain markdown instruction file. It tells Claude Code how Griff wants software
 
 ## How to install
 
-1. Copy `CLAUDE.md` to `C:\Users\<you>\.claude\CLAUDE.md`.
-2. Start a new Claude Code session. It loads the file automatically in every project.
+Claude Code does this for you. At the start of every new project, it grabs `CLAUDE.md` from the `main` branch of this repo and saves it unchanged in the root of the new project. Nothing is stored in the user profile folder.
 
-To update, replace that file with the newest `CLAUDE.md` from this repo.
+To bring an older project up to date, copy the newest `CLAUDE.md` from this repo into that project.
 
 ## Usage
 
 - This repo is the source of truth. Edit `CLAUDE.md` here, then copy it to the `.claude` folder.
-- Claude Code never edits this file. If it thinks a rule is wrong or outdated, it tells Griff and asks.
-- Projects do not get their own `CLAUDE.md`. Project-specific notes go in each project's README.
+- Claude Code never edits this file or any project's copy of it. If it thinks a rule is wrong or outdated, it tells Griff and asks.
+- Every project holds an unmodified copy of `CLAUDE.md`. Project-specific notes go in each project's README.
 
 ## Architecture
 

@@ -7,6 +7,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Fixed
+
+- New project checklist step 1 now downloads `CLAUDE.md` directly from the raw URL on the `main` branch of this repo and saves it unchanged in the new project. No clone, and nothing in the user profile folder.
+- Every project now holds an unmodified copy of `CLAUDE.md`. Updated the header, the "never edit" rule, and the README to match.
+
 ## [1.2.0] - 2026-11-14
 
 ### Added

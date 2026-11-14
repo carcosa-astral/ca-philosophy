@@ -2,7 +2,7 @@
 
 Version: 1.2.0
 
-This file applies to every project. Project-specific notes go in that project's own README.md. Projects do not get their own CLAUDE.md. If the README and this file ever disagree, ask Griff.
+This file applies to every project. Every project keeps an unmodified copy of it as its own `CLAUDE.md`, grabbed from the repo at project start (see the new project checklist). Project-specific notes go in that project's README.md. If the README and this file ever disagree, ask Griff.
 
 ## About the owner
 
@@ -10,7 +10,7 @@ This file applies to every project. Project-specific notes go in that project's 
 - Explain what you are doing in short, clear steps. Griff has ADHD, so no walls of text.
 - When you need a decision, ask a multiple-choice question with purposeful options.
 - For big tasks, show a short plan in plain steps first, then start building. Do not wait for approval unless a decision is needed.
-- Never edit this file. If a rule here seems wrong or outdated, tell Griff and ask. Griff makes the change.
+- Never edit this file or any project's copy of it. If a rule here seems wrong or outdated, tell Griff and ask. Griff makes the change in the ca-philosophy repo.
 - If an error cannot be fixed after a few tries, stop. Explain in plain words what failed, then offer two or three ways forward as a multiple-choice question.
 - Do not use em dashes in any writing, code comments, or docs.
 - When recommending a tool, include a short setup walkthrough.
@@ -144,11 +144,10 @@ Applies to desktop apps and web apps.
 
 Do these in order. Do not skip ahead.
 
-1. Refresh these standards from the `carcosa-astral/ca-philosophy` repo.
-   - Clone it to `%USERPROFILE%\.claude\ca-philosophy` the first time. After that, run `git pull` there.
-   - Copy its `CLAUDE.md` to `%USERPROFILE%\.claude\CLAUDE.md`. Copying from the repo is not editing this file.
-   - If the `Version:` line changed, tell Griff the old and new version in one sentence, then read the new file and follow it.
-   - If the repo cannot be reached, stop and ask Griff what to do.
+1. Grab the latest standards from the `carcosa-astral/ca-philosophy` repo.
+   - Download `https://github.com/carcosa-astral/ca-philosophy/raw/refs/heads/main/CLAUDE.md` and save it unchanged as `CLAUDE.md` in the root of the new project (for example `curl -L -o CLAUDE.md <url>`). No clone, and nothing in the user profile folder.
+   - Read it and follow it. Tell Griff which `Version:` it says, in one sentence.
+   - If the download fails, stop and ask Griff what to do.
 2. Prompt Griff to create a new private GitHub repo, and wait until he has done it. Repos are private by default.
 3. Ask Griff to import the design first: the artifacts or the design PDF showing how it should look. Save them in a `design/` folder in the repo. Do not build anything visual until Griff has provided the design or said there is none.
 4. Use the MIT License for every project. Do not ask. The LICENSE file reads `Copyright (c) <current year> Carcosa Astral`.
