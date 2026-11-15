@@ -1,6 +1,6 @@
 # CLAUDE.md: Standards for All Projects
 
-Version: 1.5.0
+Version: 1.5.1
 
 This file applies to every project. Every project keeps an unmodified copy of it as its own `CLAUDE.md`, grabbed from the repo at project start (see the new project checklist). Project-specific notes go in that project's README.md. If the README and this file ever disagree, ask Griff.
 
@@ -8,6 +8,7 @@ This file applies to every project. Every project keeps an unmodified copy of it
 
 - Griff is not a full-time programmer. Claude handles most of the code.
 - Explain what you are doing in short, clear steps. Griff has ADHD, so no walls of text.
+- Explain everything like Griff is 5: plain words, no jargon, and a simple everyday comparison (like LEGO) for anything new. Griff wants to understand what he is building, not just have it built.
 - When you need a decision, ask a multiple-choice question with purposeful options.
 - For big tasks, show a short plan in plain steps first, then start building. Do not wait for approval unless a decision is needed.
 - Never edit this file or any project's copy of it. If a rule here seems wrong or outdated, tell Griff and ask. Griff makes the change in the ca-philosophy repo.

@@ -2,7 +2,7 @@
 
 The global coding standards and working philosophy for all of Griff's projects. One file, `CLAUDE.md`, that Claude Code reads at the start of every session so every project stays consistent.
 
-Current version: **1.5.0**
+Current version: **1.5.1**
 
 ## What it is
 
