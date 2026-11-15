@@ -2,7 +2,7 @@
 
 The global coding standards and working philosophy for all of Griff's projects. One file, `CLAUDE.md`, that Claude Code reads at the start of every session so every project stays consistent.
 
-Current version: **1.5.2**
+Current version: **1.6.0**
 
 ## What it is
 
@@ -14,6 +14,7 @@ A plain markdown instruction file. It tells Claude Code how Griff wants software
 - **Philosophy:** snappy, no bloat, own code first, personal use only, small focused files, light testing.
 - **Desktop applications:** Rust, Windows first and cross-platform capable, no web views, outside crates allowed but kept few, portable single `.exe`, data stored next to the `.exe`.
 - **Web apps and websites:** always Cloudflare (Workers, D1, R2, Images and Stream, Turnstile, Access), TypeScript, plain HTML, CSS and JavaScript, Wrangler for everything, secrets from a local `.env`.
+- **Security basics:** private by default, keys not passwords, close unused doors, automatic updates, one user per service, backups, static public pages.
 - **Design and look:** ask which design to use for each project (Hali is an option, never the default), accessibility baseline, date and time display.
 - **Windows scripting:** scripts in Python run by bare name from `C:\tools`, anything bigger in Rust.
 - **New project checklist:** the order of steps for every new project.

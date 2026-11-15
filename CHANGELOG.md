@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.6.0] - 2026-11-15
+
+### Added
+
+- "Security basics" section: private by default, keys not passwords, firewall closed by default, automatic updates, one user per service, backups, static public pages.
+
 ## [1.5.2] - 2026-11-15
 
 ### Changed

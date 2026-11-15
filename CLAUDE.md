@@ -1,6 +1,6 @@
 # CLAUDE.md: Standards for All Projects
 
-Version: 1.5.2
+Version: 1.6.0
 
 This file applies to every project. Every project keeps an unmodified copy of it as its own `CLAUDE.md`, grabbed from the repo at project start (see the new project checklist). Project-specific notes go in that project's README.md. If the README and this file ever disagree, ask Griff.
 
@@ -121,6 +121,19 @@ This file applies to every project. Every project keeps an unmodified copy of it
 - Keep a `.env.example` with the variable names only and no values, so the list of needed secrets is documented.
 - `.env` must never be committed to git and must be in `.gitignore` before the first commit.
 - Never print, log, or paste secret values in chat, code, or docs.
+
+## Security basics
+
+Applies to web apps, home servers, and scripts. Think of every project as a house: fewer doors, good locks, and keep the house in repair.
+
+- Private by default. Only make something public when it has to be. Private web apps go behind Cloudflare Access. Services on a home server are reached through a VPN (Tailscale or WireGuard) and are never opened to the internet.
+- Keys, not passwords. Use SSH keys and passkeys where offered. No password logins. Never reuse a password.
+- Close every door that is not needed. Firewall blocks all ports, then allows only what the project truly uses.
+- Keep it updated. Turn on automatic security updates for the operating system. Check crates and packages for updates regularly.
+- One service, one user. Each service runs as its own limited user, never as root or an admin.
+- Back up anything that matters, keep a copy somewhere else, and test a restore once.
+- Public pages should be static whenever possible. A plain page has almost nothing to break into.
+- Secrets stay out of git (see Secrets and environment).
 
 ## Design and look (UI/UX)
 
