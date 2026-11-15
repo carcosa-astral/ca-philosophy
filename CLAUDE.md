@@ -1,6 +1,6 @@
 # CLAUDE.md: Standards for All Projects
 
-Version: 1.4.0
+Version: 1.5.0
 
 This file applies to every project. Every project keeps an unmodified copy of it as its own `CLAUDE.md`, grabbed from the repo at project start (see the new project checklist). Project-specific notes go in that project's README.md. If the README and this file ever disagree, ask Griff.
 
@@ -18,7 +18,7 @@ This file applies to every project. Every project keeps an unmodified copy of it
 ## Philosophy
 
 - Software should be snappy, good looking, and contain nothing the user does not use.
-- We borrow nothing. We build from our own code and our own specs, every time.
+- We build from our own code and our own specs first. Outside crates are allowed when they earn their place (see Dependencies).
 - No bloat, no background services, no telemetry, no features nobody asked for.
 - Every line of code and every byte shipped must earn its place.
 - If a choice is between "faster to build" and "lighter to run", lighter wins unless Griff says otherwise.
@@ -50,21 +50,22 @@ This file applies to every project. Every project keeps an unmodified copy of it
 - Fast startup, low memory, small binary.
 - Release builds use `opt-level = 3`, `lto = true`, `codegen-units = 1`, `strip = true`, `panic = "abort"` unless a project has a reason not to.
 
-### Dependencies (strict)
+### Dependencies
 
-- Zero external crates. Standard library plus our own code. Build it ourselves, to spec.
-- Calling the operating system directly is not borrowing. Write our own minimal bindings to OS APIs (for example Win32 on Windows) instead of pulling in a binding crate.
-- Never add a crate on your own. Only Griff can approve one, and only when he says so specifically.
-- If Griff approves one, record it in the project's README under "Approved dependencies" with the date and reason.
-- If an approved crate is only a stopgap, mark it "temporary" and note what will replace it.
+- Outside crates are allowed. Use the standard library and our own code for small things. Use a crate when it saves real time or avoids real risk, such as encryption, TLS, compression, parsing, or text rendering.
+- Keep the count small. Prefer well-known, actively maintained crates with few sub-dependencies. Do not add a crate that pulls in a web view, a heavy framework, or a background runtime unless Griff says so.
+- For operating system calls, the official `windows` crate is fine. Small hand-written bindings are also fine when only a few calls are needed.
+- A crate must not break the desktop rules: still a single native `.exe` with no runtime to install. Check the binary size after adding one.
+- Record every crate in the project's README under "Approved dependencies" with the date and reason, and tell Griff in one sentence what was added and why.
+- If a crate is only a stopgap, mark it "temporary" and note what will replace it.
 
 ### UI
 
 - No web views and no heavy third-party UI frameworks by default.
 - Long-term goal: our own in-house UI library, built from our own design spec (colors, spacing, type scale, widgets), reused across all apps. It lives in its own repo.
 - Build the UI library in small steps. Each app should only pull in the widgets it needs.
-- Platform plumbing (opening a window, reading input, drawing pixels, rendering text) is the hardest part to write from scratch. We still write it ourselves. Build it in small, testable pieces, one platform at a time, and keep each platform's code behind a shared interface.
-- If a piece looks unreasonably hard (for example full font shaping or accessibility), stop and tell Griff the options before choosing. Do not borrow quietly.
+- Platform plumbing (opening a window, reading input, drawing pixels, rendering text) is the hardest part to write from scratch. Write it ourselves by default. Build it in small, testable pieces, one platform at a time, and keep each platform's code behind a shared interface.
+- If a piece looks unreasonably hard (for example full font shaping or accessibility), stop and tell Griff the options before choosing. A crate may be the right answer, but say so out loud.
 - Keep UI code separate from app logic, so logic can be tested without a window.
 
 ### Code quality
@@ -136,8 +137,8 @@ Applies to desktop apps and web apps.
 
 ## Windows scripting
 
-- Tiny, single-purpose scripts are Batch or PowerShell. Anything bigger becomes a Rust `.exe` that follows the desktop rules above (including no external crates).
-- Helper scripts (.bat, .ps1) go in `C:\tools`, which is on PATH.
+- Scripts on Griff's PC are Python (`.py`). Anything bigger becomes a Rust `.exe` that follows the desktop rules above.
+- Scripts go in `C:\tools`, which is on PATH. Griff runs them by bare name, for example `cleanvideo`, not `py C:\tools\cleanvideo.py`. This works because `.PY` is in the `PATHEXT` setting. If it does not work on a machine, add a one-line `.bat` shim next to the script instead.
 - Griff's RMM terminal starts in Command Prompt. Write command lines that run from cmd without switching shells, using `powershell -NoProfile -Command "..."` or an encoded command when PowerShell is needed.
 
 ## New project checklist

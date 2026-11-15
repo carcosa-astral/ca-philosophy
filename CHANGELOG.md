@@ -7,6 +7,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.5.0] - 2026-11-15
+
+### Changed
+
+- Outside Rust crates are now allowed. The "Dependencies (strict)" rules became "Dependencies": keep the count small, prefer well-known crates, record each one in the README.
+- "We borrow nothing" now reads "own code and specs first".
+- Windows scripting: scripts on Griff's PC are Python, run by bare name from `C:\tools` through `PATHEXT`, with a `.bat` shim as the fallback. Batch and PowerShell scripts are no longer the default.
+
 ## [1.4.0] - 2026-11-14
 
 ### Added
