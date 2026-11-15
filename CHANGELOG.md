@@ -7,6 +7,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.7.0] - 2026-11-15
+
+### Changed
+
+- "Windows scripting" is now "Scripts", moved next to Desktop applications and Web apps.
+
+### Added
+
+- Python packages: same rule as crates. Borrow a pip package only for big jobs or security.
+
 ## [1.6.0] - 2026-11-15
 
 ### Added

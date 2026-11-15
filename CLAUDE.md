@@ -1,6 +1,6 @@
 # CLAUDE.md: Standards for All Projects
 
-Version: 1.6.0
+Version: 1.7.0
 
 This file applies to every project. Every project keeps an unmodified copy of it as its own `CLAUDE.md`, grabbed from the repo at project start (see the new project checklist). Project-specific notes go in that project's README.md. If the README and this file ever disagree, ask Griff.
 
@@ -122,6 +122,13 @@ This file applies to every project. Every project keeps an unmodified copy of it
 - `.env` must never be committed to git and must be in `.gitignore` before the first commit.
 - Never print, log, or paste secret values in chat, code, or docs.
 
+## Scripts
+
+- Scripts on Griff's PC are Python (`.py`). Anything bigger becomes a Rust `.exe` that follows the desktop rules above.
+- Python packages follow the same idea as crates. Use Python's built-in tools for small things. Borrow a pip package only when the job is big or doing it ourselves could weaken security. Keep the list short. Note each package at the top of the script with the date and reason, and tell Griff in one sentence what was added and why.
+- Scripts go in `C:\tools`, which is on PATH. Griff runs them by bare name, for example `cleanvideo`, not `py C:\tools\cleanvideo.py`. This works because `.PY` is in the `PATHEXT` setting. If it does not work on a machine, add a one-line `.bat` shim next to the script instead.
+- Griff's RMM terminal starts in Command Prompt. Write command lines that run from cmd without switching shells, using `powershell -NoProfile -Command "..."` or an encoded command when PowerShell is needed.
+
 ## Security basics
 
 Applies to web apps, home servers, and scripts. Think of every project as a house: fewer doors, good locks, and keep the house in repair.
@@ -148,12 +155,6 @@ Applies to desktop apps and web apps.
 - Ask again for each new project, even if the last one used Hali.
 - Dates and times: store in UTC, display in US Eastern with a 12-hour clock.
 - Accessibility baseline for every UI: everything works with the keyboard alone, and text has readable contrast. Where the chosen design spec conflicts with this, tell Griff before building.
-
-## Windows scripting
-
-- Scripts on Griff's PC are Python (`.py`). Anything bigger becomes a Rust `.exe` that follows the desktop rules above.
-- Scripts go in `C:\tools`, which is on PATH. Griff runs them by bare name, for example `cleanvideo`, not `py C:\tools\cleanvideo.py`. This works because `.PY` is in the `PATHEXT` setting. If it does not work on a machine, add a one-line `.bat` shim next to the script instead.
-- Griff's RMM terminal starts in Command Prompt. Write command lines that run from cmd without switching shells, using `powershell -NoProfile -Command "..."` or an encoded command when PowerShell is needed.
 
 ## New project checklist
 
