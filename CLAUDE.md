@@ -1,6 +1,6 @@
 # CLAUDE.md: Standards for All Projects
 
-Version: 1.5.1
+Version: 1.5.2
 
 This file applies to every project. Every project keeps an unmodified copy of it as its own `CLAUDE.md`, grabbed from the repo at project start (see the new project checklist). Project-specific notes go in that project's README.md. If the README and this file ever disagree, ask Griff.
 
@@ -53,7 +53,7 @@ This file applies to every project. Every project keeps an unmodified copy of it
 
 ### Dependencies
 
-- Outside crates are allowed. Use the standard library and our own code for small things. Use a crate when it saves real time or avoids real risk, such as encryption, TLS, compression, parsing, or text rendering.
+- Outside crates are allowed. Borrow mostly in two cases: the job is big (for example text rendering, image or video decoding, compression, parsing), or doing it ourselves could weaken security (for example encryption, TLS, password hashing). Everything else, use the standard library and our own code.
 - Keep the count small. Prefer well-known, actively maintained crates with few sub-dependencies. Do not add a crate that pulls in a web view, a heavy framework, or a background runtime unless Griff says so.
 - For operating system calls, the official `windows` crate is fine. Small hand-written bindings are also fine when only a few calls are needed.
 - A crate must not break the desktop rules: still a single native `.exe` with no runtime to install. Check the binary size after adding one.

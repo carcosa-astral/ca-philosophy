@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.5.2] - 2026-11-15
+
+### Changed
+
+- Dependencies: borrow a crate mostly when the job is big or when building it ourselves could weaken security. Everything else is built in house.
+
 ## [1.5.1] - 2026-11-15
 
 ### Added
