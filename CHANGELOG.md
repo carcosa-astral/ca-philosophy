@@ -7,6 +7,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.8.0] - 2026-11-15
+
+### Changed
+
+- Scripts: each script now lives in its own folder under `C:\tools` (also its git repo) with a `data` subfolder, and gets a one-line `.cmd` launcher in `C:\tools`. This replaces the bare `.py` in `C:\tools` and the `PATHEXT` approach.
+- Python packages are also recorded in the README, with the `pip install` command.
+
 ## [1.7.0] - 2026-11-15
 
 ### Changed

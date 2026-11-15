@@ -1,6 +1,6 @@
 # CLAUDE.md: Standards for All Projects
 
-Version: 1.7.0
+Version: 1.8.0
 
 This file applies to every project. Every project keeps an unmodified copy of it as its own `CLAUDE.md`, grabbed from the repo at project start (see the new project checklist). Project-specific notes go in that project's README.md. If the README and this file ever disagree, ask Griff.
 
@@ -125,8 +125,9 @@ This file applies to every project. Every project keeps an unmodified copy of it
 ## Scripts
 
 - Scripts on Griff's PC are Python (`.py`). Anything bigger becomes a Rust `.exe` that follows the desktop rules above.
-- Python packages follow the same idea as crates. Use Python's built-in tools for small things. Borrow a pip package only when the job is big or doing it ourselves could weaken security. Keep the list short. Note each package at the top of the script with the date and reason, and tell Griff in one sentence what was added and why.
-- Scripts go in `C:\tools`, which is on PATH. Griff runs them by bare name, for example `cleanvideo`, not `py C:\tools\cleanvideo.py`. This works because `.PY` is in the `PATHEXT` setting. If it does not work on a machine, add a one-line `.bat` shim next to the script instead.
+- Every script gets its own folder under `C:\tools`, for example `C:\tools\cleanvideo\`. That folder is the script's git repo. The code lives in it. Data (settings, history, login or session files) goes in a `data` subfolder, and `data` is in `.gitignore`.
+- Every script gets a one-line launcher in `C:\tools`, named after the script, for example `C:\tools\cleanvideo.cmd`. `C:\tools` is on PATH, so Griff just types `cleanvideo`. The launcher calls Python on the script inside its folder, like this: `@python "%~dp0cleanvideo\cleanvideo.py" %*`. The README explains how to recreate the launcher.
+- Python packages follow the same idea as crates. Use Python's built-in tools for small things. Borrow a pip package only when the job is big or doing it ourselves could weaken security. Keep the list short. Note each package at the top of the script and in the README under "Approved dependencies", with the date and reason, and tell Griff in one sentence what was added and why. The README also says the `pip install` command needed.
 - Griff's RMM terminal starts in Command Prompt. Write command lines that run from cmd without switching shells, using `powershell -NoProfile -Command "..."` or an encoded command when PowerShell is needed.
 
 ## Security basics
